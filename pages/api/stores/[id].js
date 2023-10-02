@@ -16,9 +16,9 @@ export default async function (req, res) {
       }
       break;
 
-    case 'POST':
-      await createStore(req, res);
-      break;
+    // case 'POST':
+    //   await createStore(req, res);
+    //   break;
 
     case 'PATCH':
       await updateStore(req, res);
