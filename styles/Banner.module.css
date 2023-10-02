@@ -1,0 +1,118 @@
+/** By default, this is a mobile breakpoint **/
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--text-black);
+
+  font-size: 3rem /* 48px */;
+  line-height: 1;
+  color: var(--text-purple);
+
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.title span {
+  display: block;
+  color: rgba(249, 250, 251, 1);
+}
+
+.subTitle {
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+
+  color: rgba(249, 250, 251, 1);
+}
+
+.button {
+  background-color: var(--text-purple-dark);
+  cursor: pointer;
+  color: white;
+  outline: 0;
+  border: 0px;
+  border-radius: 8px;
+
+  padding-top: 1rem /* 16px */;
+  padding-bottom: 1rem /* 16px */;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  padding-left: 2.5rem /* 40px */;
+  padding-right: 2.5rem /* 40px */;
+
+  transition: all ease-in 0.3s;
+}
+
+.button:hover {
+  background-color: var(--text-purple);
+}
+
+/** 
+    Breakpoints:
+    ------------
+    sm: min-width: 640px; //small device
+    md: min-width: 768px; // medium device
+    lg: min-width: 1024px; // large device
+    xl: min-width: 1280px; // extra large device
+    2xl: min-width: 1536px; // 2 x extra large device
+  **/
+
+/** sm breakpoint **/
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem /* 48px */;
+    line-height: 1;
+  }
+
+  .subTitle {
+    max-width: 36rem;
+  }
+}
+
+/** md breakpoint **/
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem /* 60px */;
+    line-height: 1;
+  }
+
+  .button {
+    padding-top: 1rem /* 16px */;
+    padding-bottom: 1rem /* 16px */;
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    padding-left: 2.5rem /* 40px */;
+    padding-right: 2.5rem /* 40px */;
+  }
+}
+
+/** lg breakpoint **/
+@media (min-width: 1024px) {
+  .container {
+    text-align: start;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 4.5rem /* 72px */;
+    line-height: 1;
+  }
+
+  .subTitle {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/** xl breakpoint **/
+@media (min-width: 1280px) {
+  .title {
+    display: inline;
+  }
+}

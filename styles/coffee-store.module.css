@@ -1,0 +1,104 @@
+.container {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+
+  padding: 0rem;
+}
+
+.link {
+  transition: all 0.25s;
+}
+
+.link:hover {
+  color: var(--text-purple);
+  text-decoration: underline;
+}
+
+.title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.storeImg {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+
+  border: 0.5rem solid white;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.col2 {
+  background: url('/static/mesh-gradient.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #373b64;
+  padding: 5rem;
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: white;
+  color: #373b64;
+}
+
+/** Breakpoints:
+  sm: min-width: 640px;
+  md: min-width: 768px;
+  lg: min-width: 1024px;
+  xl: min-width: 1280px;
+  2xl: min-width: 1536px;
+**/
+
+@media only screen and (min-width: 748px) {
+  .layout {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .storeImg {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .storeImg {
+    width: 700px;
+  }
+}
