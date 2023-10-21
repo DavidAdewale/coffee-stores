@@ -1,19 +1,15 @@
+import { handleError } from '@/pages/api/controllers/errorFactory';
+
 export function catchAsync(fn) {
-  return async (req, res) => {
+  return async (req, res, id = undefined) => {
     try {
-      await fn(req, res);
-    } catch (error) {
-      if (error.isOperational) {
-        res.status(error.statusCode).json({
-          message: error.status,
-          error: error.message,
-        });
+      if (id) {
+        return await fn(req, res, id);
       } else {
-        res.status(500).json({
-          message: 'Something went very wrong',
-          error: error.message,
-        });
+        return await fn(req, res);
       }
+    } catch (error) {
+      handleError(error, res);
     }
   };
 }

@@ -1,35 +1,27 @@
-import { createStore } from '../storeFunctions/createStore';
-import { deleteStore } from '../storeFunctions/deleteStore';
-import { getStores } from '../storeFunctions/getStores';
-import { getStoreById } from '../storeFunctions/getStoreById';
-import { updateStore } from '../storeFunctions/updateStore';
+import {
+  deleteStore,
+  getStoreById,
+  updateStore,
+} from '../controllers/storeController';
 
 export default async function (req, res) {
   const { method } = req;
+  const { id } = req.query;
   switch (method) {
     case 'GET':
-      const { id } = req.query;
-      if (id) {
-        await getStoreById(req, res);
-      } else {
-        await getStores(req, res);
-      }
+      await getStoreById(req, res, id);
       break;
 
-    // case 'POST':
-    //   await createStore(req, res);
-    //   break;
-
     case 'PATCH':
-      await updateStore(req, res);
+      await updateStore(req, res, id);
       break;
 
     case 'DELETE':
-      await deleteStore(req, res);
+      await deleteStore(req, res, id);
       break;
 
     default:
-      res.setHeader('Allow', ['GET', 'POST']);
+      res.setHeader('Allow', ['GET', 'PATCH', 'DELETE']);
       res.status(405).end(`Method ${method} Not Allowed`);
   }
 }
